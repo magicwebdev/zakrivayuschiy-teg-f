@@ -55,7 +55,6 @@
 }
 
 .button {
-  min-inline-size: 130px;
   border: 2px solid var(--main-color, #000000);
   padding: 10px;
   font-family: var(--accent-font, monospace);
@@ -64,17 +63,18 @@
   line-height: 100%;
   background-color: var(--bg-color, #ffffff);
   cursor: pointer;
+  min-inline-size: 130px;
 }
 
 .button--save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   margin: 0 auto;
   padding: 15px;
-  min-inline-size: 335px;
   line-height: 150%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  min-inline-size: 335px;
 }
 
 .button__text {
@@ -93,29 +93,30 @@
 
 .card__image-wrapper {
   position: relative;
+  margin: 0;
 }
 
 .card__label {
+  position: absolute;
+  opacity: 0.5;
   font-family: var(--accent-font, monospace);
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
-  position: absolute;
-  inset-block-start: 25px;
-  inset-inline-end: 25px;
-  opacity: 0.5;
-  mix-blend-mode: hard-light;
   text-shadow:
     -1px 0 var(--card-label-stroke-color, #ffffff),
     0 1px var(--card-label-stroke-color, #ffffff),
     1px 0 var(--card-label-stroke-color, #ffffff),
     0 -1px var(--card-label-stroke-color, #ffffff);
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  mix-blend-mode: hard-light;
 }
 
 @supports ((text-stroke: 1px var(--card-label-stroke-color, #ffffff))) {
   .card__label {
-    text-stroke: 1px var(--card-label-stroke-color, #ffffff);
     text-shadow: none;
+    text-stroke: 1px var(--card-label-stroke-color, #ffffff);
   }
 }
 
@@ -142,12 +143,12 @@
 }
 
 .card__icon-button {
-  padding: 4px;
-  block-size: 38px;
-  inline-size: 38px;
   border: none;
+  padding: 4px;
   background-color: transparent;
   cursor: pointer;
+  block-size: 38px;
+  inline-size: 38px;
 }
 
 .card__like-button {
