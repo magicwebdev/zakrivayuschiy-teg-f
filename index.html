@@ -426,26 +426,24 @@
           </div>
         </div>
       </article>
-    </main>
-    <footer class="footer">
       <button class="button button--save" type="button" aria-controls="dialog" onclick="window['dialog'].showModal()">
         <svg class="button__icon" viewBox="0 0 39 39">
           <use href="svg/floppy.svg#floppy" />
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
-      <dialog id="dialog" class="dialog">
-        <div class="dialog__content">
-          <svg viewBox="0 0 39 39">
-            <use href="svg/floppy.svg#floppy" />
-          </svg>
-          <p>Вставьте дискету, чтобы продолжить</p>
-        </div>
-        <button class="button button--ok" type="button" onclick="window['dialog'].close()">
-          <span class="button__text">ОК</span>
-        </button>
-      </dialog>
-    </footer>
+    </main>
+    <dialog id="dialog" class="dialog">
+      <div class="dialog__content">
+        <svg viewBox="0 0 39 39">
+          <use href="svg/floppy.svg#floppy" />
+        </svg>
+        <p>Вставьте дискету, чтобы продолжить</p>
+      </div>
+      <button class="button button--ok" type="button" onclick="window['dialog'].close()">
+        <span class="button__text">ок</span>
+      </button>
+    </dialog>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
