@@ -61,21 +61,19 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
-  text-transform: capitalize;
   background-color: var(--bg-color, #ffffff);
   cursor: pointer;
   min-inline-size: 130px;
 }
 
 .button--save {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 21px 1fr;
   align-items: center;
   gap: 8px;
   margin: 0 auto;
-  padding: 15px;
-  line-height: 150%;
-  min-inline-size: 335px;
+  padding: 15px 18px;
+  line-height: 90%;
 }
 
 .button--ok {
@@ -192,4 +190,20 @@
 
 .footer {
   margin-block: 50px 100px;
+}
+
+.button--save svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (width <= 375px) {
+  .button--save {
+    grid-template-columns: auto;
+    grid-template-rows: 28px 14px;
+  }
+
+  .dialog {
+    padding-inline: 38px;
+  }
 }
