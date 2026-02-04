@@ -142,9 +142,13 @@
   mix-blend-mode: hard-light;
 }
 
-@supports (text-stroke: 1px var(--card-label-stroke-color, #ffffff)) {
+@supports (
+  (text-stroke: 1px var(--card-label-stroke-color, #ffffff)) or
+    (-webkit-text-stroke: 1px var(--card-label-stroke-color, #ffffff))
+) {
   .card__label {
     text-shadow: none;
+    -webkit-text-stroke: 1px var(--card-label-stroke-color, #ffffff);
     text-stroke: 1px var(--card-label-stroke-color, #ffffff);
   }
 }
