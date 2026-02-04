@@ -29,7 +29,7 @@
   margin: 0 auto;
   border: 2px solid var(--main-color, #000000);
   background-color: var(--bg-color, #ffffff);
-  inline-size: var(--block-size, 375px);
+  inline-size: var(--block-size, 700px);
 }
 
 .header {
@@ -61,6 +61,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
+  text-transform: capitalize;
   background-color: var(--bg-color, #ffffff);
   cursor: pointer;
   min-inline-size: 130px;
@@ -75,6 +76,11 @@
   padding: 15px;
   line-height: 150%;
   min-inline-size: 335px;
+}
+
+.button--ok {
+  text-transform: uppercase;
+  inline-size: 100%;
 }
 
 .button__text {
@@ -152,6 +158,36 @@
 }
 
 .card__like-button {
+}
+
+.dialog {
+  border: 2px solid var(--main-color, #000000);
+  padding: 28px;
+  font-family: var(--accent-font, monospace);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  background-color: var(--bg-color, #ffffff);
+  max-inline-size: clamp(341px, 90%, 353px);
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dialog::backdrop {
+  opacity: 0.75;
+  background-color: var(--main-color, #000000);
+}
+
+.dialog__content {
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  align-items: center;
+  gap: 20px;
 }
 
 .footer {

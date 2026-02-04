@@ -356,12 +356,23 @@
       </article>
     </main>
     <footer class="footer">
-      <button class="button button--save">
+      <button onclick="window['dialog'].showModal()" class="button button--save">
         <svg width="21" height="21" viewBox="0 0 39 39">
           <use href="svg/floppy.svg#floppy" />
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
+      <dialog id="dialog" class="dialog">
+        <div class="dialog__content">
+            <svg width="39" height="39" viewBox="0 0 39 39">
+              <use href="svg/floppy.svg#floppy" />
+            </svg>
+            <p>Вставьте дискету, чтобы продолжить</p>
+        </div>
+        <button onclick="window['dialog'].close()" class="button button--ok">
+          <span class="button__text">ОК</span>
+        </button>
+      </dialog>
     </footer>
     <script src="./scripts/like.js"></script>
   </body>
