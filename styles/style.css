@@ -1,14 +1,3 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-
 .page {
   color: var(--text-color, #000000);
   font-family: var(--main-font, sans-serif);
@@ -153,7 +142,7 @@
   mix-blend-mode: hard-light;
 }
 
-@supports ((text-stroke: 1px var(--card-label-stroke-color, #ffffff))) {
+@supports (text-stroke: 1px var(--card-label-stroke-color, #ffffff)) {
   .card__label {
     text-shadow: none;
     text-stroke: 1px var(--card-label-stroke-color, #ffffff);
@@ -200,11 +189,64 @@
   border-color: var(--accent-color, #000000);
 }
 
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
 .sparks {
   opacity: 0;
 }
 
-.card__like-button {
+.like-icon:hover .core {
+  fill: var(--heart-dark-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--heart-dark-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: scale-heart 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: flash-sparks 0.3s ease-in 0.3s 1;
 }
 
 .dialog {
